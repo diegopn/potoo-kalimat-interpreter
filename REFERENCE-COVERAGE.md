@@ -23,12 +23,14 @@ The table records code coverage, not behavioral validation. The allowed verifica
 | Files | Guide pp. 5–6 | File creation/open/append calls, file methods, and `print in`/`read from` operations route through host callbacks. A host must provide the file-handle behavior. |
 | Units | Guide p. 6 | `using` loads a file through `Host::load_unit`; unit definitions and simple global assignments are merged before the main program runs. Unit names remain unused, as the guide says. The command-line loader resolves files beside the main source file. |
 
+| C FFI | The current official site advertises calls to procedures written in C through FFI | The bundled language PDFs do not define syntax, ABI type mappings, ownership/lifetime, or error behavior. This crate does not load native symbols or infer an FFI contract from host callbacks. |
+
 ## Documented omissions and unresolved claims
 
 - The deck says there is no `switch` equivalent (p. 10), `do/while` is planned but unavailable (p. 11), and `break`/`continue` are deliberately absent (p. 13). This crate does not add those forms.
 - The deck says custom data types as dictionary keys are planned (p. 17), constructors are absent (p. 40), and process launch is asynchronous but not true parallel execution yet (p. 44). Those remain unsupported or host-dependent.
 - The guide says unit names are currently unused and may later support namespacing (p. 6); this implementation does not namespace unit definitions.
-- C FFI is advertised by the official site and discussed in a 2013 creator article, but it is absent from the bundled PDFs and its 2025 release status is unclear. This crate does not implement or claim FFI compatibility.
+- The official site and FAQ advertise C FFI, but the available language PDFs do not define its callable syntax or ABI contract. This crate does not implement or claim FFI compatibility.
 - Lambda, destructuring, and parser-generator features are not defined by the bundled PDFs. They are outside this baseline and are not claimed.
 
 The old creator article is retained only as historical context in the README. It is not treated as authority for current release behavior.

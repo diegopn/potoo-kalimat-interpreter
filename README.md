@@ -29,7 +29,7 @@ The documented baseline covers dynamic values, input and output, conditions and 
 
 ## Current limits
 
-The reference PDFs do not specify C FFI syntax or behavior. The official site advertises FFI, and a 2013 creator article describes it, but its status in the 2025 distribution is unclear. This crate does not implement or claim FFI compatibility.
+The current official site advertises calling C procedures through FFI, but the bundled language PDFs do not specify its syntax, ABI type mapping, ownership rules, or error behavior. This crate does not implement native symbol loading or claim FFI compatibility; those contracts cannot be derived from the available language references.
 
 The PDFs explicitly say that `do/while`, `break`, and `continue` are unavailable, custom data types are not yet supported as dictionary keys, constructors are absent, and process launch is asynchronous without true parallel execution. These limits are preserved in the documented profile.
 
@@ -52,6 +52,7 @@ The runner reads the UTF-8 source file path from its command-line argument and r
 ## References
 
 - [Official Kalimat site](https://kalimat-lang.com/)
+- [Official Kalimat FAQ](https://kalimat-lang.com/faq.html), which describes C FFI among the language capabilities
 - [Official getting-started guide](https://kalimat-lang.com/getting-started.html), which describes the grammar PDFs included with the distribution.
 - [Creator's March 2013 article](https://iamsamy.blogspot.com/2013/03/kalimat-educational-programming.html), a historical source for additional features whose current status is not established by the bundled PDFs.
 
