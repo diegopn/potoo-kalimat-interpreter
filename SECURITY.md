@@ -10,4 +10,4 @@ For other project concerns, see [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_
 
 ## Current scope
 
-This repository contains only a minimal Rust crate scaffold. It does not parse or execute Kalimat source and has no language runtime or sandbox. This policy must be updated before source execution is introduced.
+This crate parses and executes the documented Kalimat profile. It does not sandbox programs. File, unit-loading, graphics, event, process, channel, and GUI operations are delegated to the host; a host can perform additional side effects or access external resources. The command-line runner can load unit source files. Do not run untrusted source with a host that grants access to sensitive files or external services. Execution limits do not bound all resource use or host behavior.
