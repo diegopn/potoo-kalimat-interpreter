@@ -7,8 +7,12 @@ license = "GPL-3.0-or-later"
 repository = "https://github.com/diegopn/potoo-kalimat-interpreter"
 homepage = "https://diegopn.github.io/potoo-site/manual/kalimat/"
 readme = "README.md"
-description = "An evaluation scaffold for an independent Rust implementation of Kalimat, an Arabic programming language."
+description = "A host-driven interpreter for the documented historical Kalimat runtime."
 
 [lib]
 name = "potoo_kalimat_interpreter"
 path = "src/lib.rs"
+
+[[bin]]
+name = "potoo-kalimat"
+path = "src/bin/potoo-kalimat.rs"
